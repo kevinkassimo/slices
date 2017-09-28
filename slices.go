@@ -17,7 +17,6 @@ func checkSlice(s interface{}) {
 	}
 }
 
-
 //func Insert(s interface{}, i int, args ...interface{}) interface{} {
 //	checkSlice(s)
 //	return
