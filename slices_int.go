@@ -2,7 +2,8 @@ package slices
 
 import "strconv"
 
-type _Int struct {}
+type _Int struct{}
+
 var Int _Int
 
 func (_ *_Int) Append(s []int, args ...int) []int {
@@ -47,7 +48,7 @@ func (_ *_Int) Cut(s []int, i, j int) ([]int, []int) {
 
 func (_ *_Int) Extract(s []int, i int) (int, []int) {
 	if len(s) <= i {
-		crash("cannot remove at index " + strconv.Itoa(i) +  ": slice too short")
+		crash("cannot extract at index " + strconv.Itoa(i) + ": slice too short")
 	}
 
 	r := s[i]
@@ -116,7 +117,7 @@ func (_ *_Int) Push(s []int, n int) []int {
 }
 
 func (_ *_Int) Pop(s []int) (int, []int) {
-	last := len(s)-1
+	last := len(s) - 1
 	return s[last], s[:last]
 }
 
